@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --primary-color:#9ebff2; 
+    --secondary-color: #0a1948;
+    --bg: #dbf2fa;
+    --nav-bg: #ecf8fc;
+    --card-bg: #ecf8fc;
+    --box-bg: #dee9ec;
+    --hover-bg:#0a1948; /* or use rgb(158, 191, 242) */
+    --text: #261e37;
+    --ul-color:rgb(99, 99, 99);
+    --shadow-box:0 5px 10px #7f878cdf;
+}
+
+body.darkmode{
+    --primary-color:#4f7cff; 
+    --secondary-color: #284dbd;
+    --bg: #1b1d1e;
+    --nav-bg: #262828;
+    --card-bg: #262828;
+    --box-bg: #3a3c3d;
+    --text: #d8d8d8;
+    --ul-color:rgb(225, 222, 222);
+    --shadow-box: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+}
+.container{
+    display: flex;
+}
+
+nav{ /* this targets the nav element (bar) */
+    position: relative;
+    top:0;
+    bottom:0;
+    height: 100vh;
+    left:0;
+    background: var(--nav-bg);
+    width: 330px;
+    overflow: hidden;
+    box-shadow: var(--shadow-box);
+}
+
+.logo{ /* this targets all elements with the class logo */
+    align-items: center;
+    display: flex;
+    margin: 10px 0 0 10px;
+}
+
+.logo img{ /* this targets the img element inside the logo class */
+    width: 85px;
+    height: 85px;
+}
+
+.logo span{ /* this targets the span element inside the logo class (dashboard)*/
+    font-weight: 550; /* keyword:"bold" would also work */
+    padding-left:10px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+a{ /* this targets all elements in the <a> region */
+    position: relative;
+    color: var(--text);
+    font-size: medium;
+    display: table; /* display: flex align-items: center, width: 100%*/
+    width: 280px;
+    padding: 5px;
+    
+}
+
+nav .fas,nav .fa-solid { /* this targets all font awesome icons (fas classes) in the nav bar */
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 2px;/* 14px */
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item{ /* this targets all elements with the class nav-item */
+    position:relative;
+    top: 0px; /* 12px */
+    margin-left: 10px; /* 10px */
+}
+
+a:hover{ /* hover effect for links in nav bar */
+    background-color: #dcf2fa;
+    color: var(--secondary-color);/*not inclued*/
+}
+
+.logout{ /* this targets the logout button specifically */
+    position: absolute;
+    bottom: 0;
+}
+
+/* Main Section*/
+.main{
+    position: relative;
+    padding: 20px;
+    width:100%; /* i would put it as 50%*/
+}
+
+.main-top{ /* this targets the main-top class which includes the skills section  */
+    display: flex;
+    width: 70%;
+}
+
+.main-top i{ /* this targets all font awesome icons (fas classes) in the main-top section */
+    position: absolute;
+    right: 10px;
+    margin: 10px 30px;
+    color:var(--text);
+    cursor: pointer;
+}
+
+.main-skills{
+    display: flex;
+    margin-top: 20px;
+}
+
+.main-skills .card{ /* this targets all elements with the class card inside the main-skills section (the web development box) */
+    width: 25%;
+    margin: 10px;
+    background: var(--card-bg);
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: var(--shadow-box);
+}
+
+.main-skills .card h3{ /* this targets all h3 elements inside the card class in the main-skills section (web development) */
+    margin: 10px;
+    text-transform: capitalize;
+}
+
+.main-skills .card p{
+    font-size: medium;   
+}
+.main-skills .card button{
+    background: #9ebff2; /* button background color */
+    color: #0a1948; /* button text color */
+    font-weight:500;
+    padding: 5px 10px ;/* size of the button (top/bottom left/right) */
+    border-radius: 10px;
+    margin-top: 10px;/* space between the button and the paragraph above it */
+    cursor: pointer; /* allows the cursor to change to a pointer when hovering over the button => making the user click the button */
+}
+
+.main-skills .card button:hover{
+    background:var(--hover-bg); /* or use rgb(158, 191, 242) */
+    color: white;
+}
+
+/* Courses Section */
+.main-course{
+    margin-top:30px;
+    text-align: left;
+    font-size: 12px;
+    text-transform:capitalize;
+}
+.course-box{
+    width: 100%;
+    padding:10px;
+    margin-top: 10px;
+    border-radius:10px;
+    background: var(--box-bg);
+    box-shadow: var(--shadow-box);
+} 
+
+.course-box ul{
+    list-style: none;
+    display:flex;
+}
+
+.course-box ul li{
+    margin: 10px;
+    color:var(--ul-color);
+    cursor:pointer;
+}
+ 
+.course-box ul .active{
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color);
+    font-weight:bold;
+}
+
+.course-box .course{
+    display:flex;
+}
+
+.box{
+    width: 33%;
+    padding: 10px;
+    margin:10px;
+    background: var(--box-bg);
+    box-shadow: var(--shadow-box);
+}
+
+.box p{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.box button{
+    background:#9ebff2; /* button background color */
+    color: #0a1948;
+    padding: 7px 10px;
+    border-radius: 10px;
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+.box button:hover{
+    background:var(--hover-bg); /* or use rgb(158, 191, 242) */
+    color: white;
+}
+
+.box i{
+    font-size: 6rem;
+    float: right;
+    margin: -20px 20px 20px 0;
+}
+
+.html{
+    color: #3b93f2;
+}
+
+.css{
+    color:rgb(158, 218, 18)
+}
+
+.js{
+    color: #f0db4f;
+}
+
+#theme-switch{
+    height:50px;
+    width:50px;
+    padding:0;
+    border-radius: 50%;
+    background-color: var(--box-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 10px;
+    right: 55px;
+    z-index: 2147483647; /* ensures button is always on top of other elements => it works with no issues */
+}
+
+#theme-switch:hover{
+    cursor: pointer;
+    box-shadow: var(--shadow-box);
+    transform: scale(1.05);
+}
+
+#theme-switch span{
+    color: var(--primary-color);
+    font: 24px;
+
+}
+
+#theme-switch span:last-child{ /*this hides the "last child" which is the sun icon*/
+    display: none;
+}
+
+body.darkmode #theme-switch span:first-child{ /*this hides the "first child" which is the moon icon*/
+    display: none;
+}
+
+body.darkmode #theme-switch span:last-child{ /*this shows the "last child" which is the sun icon*/
+    display: block;
+}
